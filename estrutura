@@ -1,0 +1,38 @@
+  capa.html
+📦 raiz/
+├── 📄 index.html                      # Núcleo da interface e carregamento dinâmico
+│
+├── 📁 partials/                      # Seções modulares do playbook
+│   ├── central.html
+│   ├── manual.html
+│   ├── historia.html
+│   ├── autoarremate.html
+│   ├── arremaq.html
+│   ├── personas.html
+│   ├── persona-animation.html
+│   ├── guia interativo de vendas/
+│   ├── validacao.html
+│   ├── comunicacao.html
+│   ├── glossario.html
+│   ├── evolucao.html
+│   ├── suporte.html
+│   ├── setores.html
+│   ├── autocards.html
+│   ├── quiz.html
+│   ├── jogo.html
+│   ├── trilha.html                     # 🎓 Estrutura geral da trilha de aprendizado (renomeado)
+│   ├── academia-repassadores.html      # 🏁 Módulo de Repassadores (novo)
+│   └── jornadadocliente/
+│       ├── index.html
+│       ├── inbound-30.html
+│       ├── outbound-30.html
+│       ├── inbound-60.html
+│       ├── outbound-60.html
+│       ├── inbound-90.html
+│       └── outbound-90.html
+│
+├── 📁 css/
+│   └── style.css                       # Estilos globais com suporte a temas, animações e responsividade
+│
+├── 📁 js/
+│   └── script.js                       # Script de controle geral, animações, interações e carregamento
