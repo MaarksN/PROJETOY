@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Aprendizado - Auto Arremate & Arremaq</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-primary-portal">
+
+    <div class="container mx-auto p-4 sm:p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold font-headings-portal mb-2"><i class="fas fa-tachometer-alt mr-3"></i>Dashboard de Progresso</h1>
+            <p id="summary-text" class="text-lg text-muted-dark-portal">Sua jornada de aprendizado em um só lugar.</p>
+            <a href="trilha.html" class="inline-block mt-4 text-accent-color hover:text-accent-color-hover transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i> Voltar para a Trilha
+            </a>
+        </header>
+
+        <main id="dashboard-grid" class="space-y-4">
+            </main>
+
+        <footer class="text-center mt-12">
+            <button id="btn-reset-progress" class="text-sm text-red-500 hover:text-red-400 transition-colors">
+                <i class="fas fa-trash-alt mr-2"></i> Reiniciar todo o progresso
+            </button>
+        </footer>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>

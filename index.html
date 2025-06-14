@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook | Auto Arremate & Arremaq</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.min.js"></script>
+</head>
+<body>
+    <div id="progress-bar"></div>
+
+    <section id="capa" class="capa-section">
+        <div class="logos-container">
+            <img src="https://i.imgur.com/xH06s6D.png" alt="Logo Auto Arremate" class="playbook-logo">
+            <img src="https://i.imgur.com/bWd1qYo.png" alt="Logo Arremaq" class="playbook-logo">
+        </div>
+        <h1 class="capa-title fun-title-effect">
+            <span class="capa-title-line">Playbook de Vendas & Operações</span>
+            <span class="capa-title-line"><span class="text-aa-green-darker">Auto Arremate</span> & <span class="text-arremaq-orange-darker">Arremaq</span></span>
+        </h1>
+        <p class="frase-destaque frase-destaque-verde fun-frase-effect">
+            <span class="emoji emoji-original-color">🏆</span> Acelere suas vendas, domine a pista. <span class="emoji emoji-original-color">🏆</span>
+        </p>
+        <button id="btnIniciar" class="btn-iniciar">
+            Acessar o Playbook
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width: 1.2em; height: 1.2em;">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </button>
+        <p class="capa-criado">
+            <span class="emoji emoji-original-color">💡</span> Criado e desenvolvido por <span class="creator-name">Kauã_Dev</span> <span class="emoji emoji-original-color">💡</span>
+        </p>
+    </section>
+
+    <section id="menuPrincipal" class="menu-principal-section hidden">
+        <div class="container mx-auto">
+            <h2 class="menu-principal-title">
+                <span class="emoji emoji-original-color">🚦</span> Central de Comando <span class="emoji emoji-original-color">🚦</span><br>Acesso Total às Estratégias Vencedoras!
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="menu-card" data-secao="manualPitstopDetalhes">
+                    <div class="menu-card-icon"><span class="emoji emoji-original-color">🗺️</span></div>
+                    <h3 class="menu-card-title">Manual Tático de Vendas<br><span class="text-aa-green-darker">&</span> <span class="text-arremaq-orange-darker">Operações</span></h3>
+                </div>
+                <div class="menu-card" data-secao="guiaTaticoVendas">
+                     <div class="menu-card-icon"><span class="emoji emoji-original-color">🛠️</span></div>
+                    <h3 class="menu-card-title">Scripts e Modelos <br>de <span class="text-aa-green-darker">Comunicação</span></h3>
+                </div>
+                <div class="menu-card" data-secao="ferramentasEstrategicas">
+                    <div class="menu-card-icon"><span class="emoji emoji-original-color">⛽</span></div>
+                    <h3 class="menu-card-title">Ferramentas <br><span class="text-aa-green-darker">Estratégicas</span></h3>
+                </div>
+                <div class="menu-card" data-secao="desafiosJogos">
+                    <div class="menu-card-icon"><span class="emoji emoji-original-color">🏆</span></div>
+                    <h3 class="menu-card-title">Desafios <span class="text-aa-green-darker">&</span> <br> <span class="text-arremaq-orange-darker">Jogos</span></h3>
+                </div>
+                <div class="menu-card" data-secao="tarefaForm">
+                    <div class="menu-card-icon"><span class="emoji emoji-original-color">✅</span></div>
+                    <h3 class="menu-card-title">Iniciar uma <span class="text-aa-green-darker">Tarefa</span></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="manualPitstopDetalhes" class="manual-pitstop-detalhes-section hidden">
+        <div class="container mx-auto">
+            <button class="btn-voltar-secao" data-target-secao="menuPrincipal"><i class="fas fa-arrow-left"></i> Voltar</button>
+            <h2 class="manual-pitstop-main-title">
+                <span class="emoji emoji-original-color">🗺️</span> Manual Tático de Vendas & Operações
+            </h2>
+            <div id="playbookIndexContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                 </div>
+        </div>
+    </section>
+
+    <section id="guiaTaticoVendas" class="playbook-sub-section hidden">
+        <div class="container mx-auto">
+            <button class="btn-voltar-secao" data-target-secao="menuPrincipal"><i class="fas fa-arrow-left"></i> Voltar</button>
+            </div>
+    </section>
+
+    <section id="ferramentasEstrategicas" class="manual-pitstop-detalhes-section hidden">
+         <div class="container mx-auto">
+             <button class="btn-voltar-secao" data-target-secao="menuPrincipal"><i class="fas fa-arrow-left"></i> Voltar</button>
+             <h2 class="manual-pitstop-main-title"><span class="emoji emoji-original-color">⛽</span> Ferramentas Estratégicas</h2>
+             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div class="index-item-card" data-page-url="VALIDADOR E CONSULTA DETALHADA DE CNPJ.html">
+                    <div class="index-item-emoji emoji-autoarremate-color">🔍</div>
+                    <h4 class="index-item-title"><strong>Validador de CNPJ</strong> com Análise IA</h4>
+                    <p class="index-item-sub"><span class="sentence-emoji">✅</span>Qualifique leads B2B com precisão.</p>
+                </div>
+             </div>
+         </div>
+    </section>
+
+    <section id="desafiosJogos" class="manual-pitstop-detalhes-section hidden">
+         <div class="container mx-auto">
+             <button class="btn-voltar-secao" data-target-secao="menuPrincipal"><i class="fas fa-arrow-left"></i> Voltar</button>
+             <h2 class="manual-pitstop-main-title"><span class="emoji emoji-original-color">🏆</span> Desafios & Jogos</h2>
+             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                 <div class="index-item-card" data-page-url="🏆DESAFIO DOS CAMPEÕES AUTO ARREMATE TESTE SEU CONHECIMENTO ESTRATÉGICO!.html">
+                    <div class="index-item-emoji emoji-arremaq-color">🏆</div>
+                    <h4 class="index-item-title"><strong>Desafio dos Campeões</strong></h4>
+                    <p class="index-item-sub"><span class="sentence-emoji">🧠</span>Teste seus conhecimentos sobre o Playbook.</p>
+                </div>
+                <div class="index-item-card" data-page-url="💨GRANDE PRÊMIO AUTO ARREMATE ACELERE NO JOGO DO REPASSE!.html">
+                    <div class="index-item-emoji emoji-autoarremate-color">💨</div>
+                    <h4 class="index-item-title"><strong>Grande Prêmio</strong> Auto Arremate</h4>
+                    <p class="index-item-sub"><span class="sentence-emoji">🏎️</span>Acelere no nosso jogo de repasse!</p>
+                </div>
+             </div>
+         </div>
+    </section>
+
+    <section id="playbookContentSection" class="playbook-sub-section hidden">
+        <div id="playbookContentContainer" class="container mx-auto">
+            </div>
+    </section>
+
+    <section id="explicacaoFinal" class="playbook-sub-section hidden">
+        <div class="container mx-auto">
+            <button class="btn-voltar-secao" data-target-secao="menuPrincipal"><i class="fas fa-arrow-left"></i> Voltar</button>
+            <h2 class="playbook-content-title"><span class="emoji">🎥</span> Como as animações cumprem o Manifesto</h2>
+            <p>Esta seção detalha como cada recurso de animação implementado com o GSAP cria uma experiência envolvente e responde ao manifesto de design do projeto.</p>
+        </div>
+    </section>
+
+    <section id="tarefaForm" class="playbook-sub-section hidden">
+        <div class="container mx-auto">
+            <button class="btn-voltar-secao" data-target-secao="menuPrincipal"><i class="fas fa-arrow-left"></i> Voltar</button>
+            <h2 class="playbook-content-title"><span class="emoji">✅</span> Nova Tarefa</h2>
+            <form id="formTarefa" class="mt-6">
+                <label for="tarefaNome">Nome da tarefa</label>
+                <input type="text" id="tarefaNome" required>
+                <label for="tarefaDesc">Descrição</label>
+                <input type="text" id="tarefaDesc" required>
+                <button type="submit" class="btn-iniciar">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="accessibility-controls">
+        <button id="increaseFont" class="accessibility-btn" aria-label="Aumentar fonte">A+</button>
+        <button id="decreaseFont" class="accessibility-btn" aria-label="Diminuir fonte">A-</button>
+        <button id="readPageBtn" class="accessibility-btn" aria-label="Ler página em voz alta">
+            <i class="fas fa-volume-up"></i>
+        </button>
+    </div>
+    <button id="themeToggleButton" class="theme-toggle-button" aria-label="Alternar tema">
+        <i id="sunIcon" class="fas fa-sun"></i>
+        <i id="moonIcon" class="fas fa-moon hidden"></i>
+    </button>
+    <script src="js/script.js"></script>
+  </section>
+
+  <section id="menuPrincipal" class="menu-principal-section hidden">
+    <h2 class="menu-principal-title">Menu Principal</h2>
+    <div class="menu-card" data-secao="manualPitstopDetalhes">
+      <span class="menu-card-icon">📘</span>
+      <p class="menu-card-title">Manual</p>
+    </div>
+  </section>
+
+  <section id="manualPitstopDetalhes" class="manual-pitstop-detalhes-section hidden">
+    <h2 class="manual-pitstop-main-title">Manual Pitstop</h2>
+    <div id="playbookIndexContainer" class="grid-cols-4">
+      <div class="index-item-card" data-page-url="partials/manual.html">
+        <span class="index-item-emoji">📄</span>
+        <h3 class="index-item-title"><strong>Manual</strong></h3>
+        <p class="index-item-sub"><span class="sentence-emoji">👉</span>Conteúdo</p>
+      </div>
+    </div>
+    <a href="#" class="btn-voltar-secao" data-target-secao="menuPrincipal">Voltar ao Menu</a>
+  </section>
+
+  <section id="playbookContentSection" class="playbook-sub-section hidden">
+    <div id="playbookContentContainer" class="container"></div>
+  </section>
+</div>
+
+<div class="theme-toggle-button" id="themeToggleButton">
+  <span id="sunIcon">☀️</span>
+  <span id="moonIcon" class="hidden">🌙</span>
+</div>
+<div class="accessibility-controls">
+  <button id="increaseFont" class="accessibility-btn">A+</button>
+  <button id="decreaseFont" class="accessibility-btn">A-</button>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>

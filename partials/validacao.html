@@ -1,0 +1,38 @@
+<body data-theme="light">
+    <button id="dark-toggle" class="dark-toggle" aria-label="Alternar tema">
+      <svg id="sun" ...> </svg>
+      <svg id="moon" ...> </svg>
+    </button>
+    <main class="page-section content-page">
+      <h1 class="content-page-title">
+        <span class="emoji">🔍</span>Validador de CNPJ & Análise IA
+      </h1>
+      <p class="info-text">
+        Insira um CNPJ para validar os dados cadastrais na Receita Federal e, opcionalmente, use a IA para gerar uma análise de potencial de cliente.
+      </p>
+
+      <div class="text-content-container">
+        <label for="cnpj">CNPJ</label>
+        <input type="text" id="cnpj" placeholder="00.000.000/0000-00" maxlength="18">
+
+        <button id="consultarBtn">Consultar CNPJ</button>
+        
+        <div id="loadingIndicator" class="loading-indicator">Consultando...</div>
+
+        <div id="resultCnpj" class="result-cnpj"></div>
+        
+        <button id="geminiBtn" class="gemini-button" style="display: none;">
+          <span class="emoji">✨</span> Analisar Potencial com IA
+        </button>
+
+        <div id="geminiResultsContainer" class="gemini-results-container" style="display: none;">
+          <h4>Análise de Potencial (via IA)</h4>
+          <div id="geminiResults"></div>
+        </div>
+
+        <div class="navigation-buttons">
+          <a href="#" class="btn-nav btn-voltar" onclick="history.back(); return false;">&larr; Voltar</a>
+        </div>
+      </div>
+    </main>
+</body>
