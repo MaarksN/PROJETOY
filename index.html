@@ -1,15 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playbook</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playbook</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Olá!</h1>
-    <p>Esta é uma página simplificada.</p>
-    <button onclick="alert('Olá!')">Clique aqui</button>
-    <script src="js/script.js"></script>
+<div id="mainContent">
+  <section id="capa" class="capa-section">
+    <h1 class="capa-title">Bem-vindo ao Playbook</h1>
+    <button id="btnIniciar" class="btn-iniciar">Iniciar</button>
+  </section>
+
+  <section id="menuPrincipal" class="menu-principal-section hidden">
+    <h2 class="menu-principal-title">Menu Principal</h2>
+    <div class="menu-card" data-secao="manualPitstopDetalhes">
+      <span class="menu-card-icon">📘</span>
+      <p class="menu-card-title">Manual</p>
+    </div>
+  </section>
+
+  <section id="manualPitstopDetalhes" class="manual-pitstop-detalhes-section hidden">
+    <h2 class="manual-pitstop-main-title">Manual Pitstop</h2>
+    <div id="playbookIndexContainer" class="grid-cols-4">
+      <div class="index-item-card" data-page-url="partials/manual.html">
+        <span class="index-item-emoji">📄</span>
+        <h3 class="index-item-title"><strong>Manual</strong></h3>
+        <p class="index-item-sub"><span class="sentence-emoji">👉</span>Conteúdo</p>
+      </div>
+    </div>
+    <a href="#" class="btn-voltar-secao" data-target-secao="menuPrincipal">Voltar ao Menu</a>
+  </section>
+
+  <section id="playbookContentSection" class="playbook-sub-section hidden">
+    <div id="playbookContentContainer" class="container"></div>
+  </section>
+</div>
+
+<div class="theme-toggle-button" id="themeToggleButton">
+  <span id="sunIcon">☀️</span>
+  <span id="moonIcon" class="hidden">🌙</span>
+</div>
+<div class="accessibility-controls">
+  <button id="increaseFont" class="accessibility-btn">A+</button>
+  <button id="decreaseFont" class="accessibility-btn">A-</button>
+</div>
+<script src="js/script.js"></script>
 </body>
 </html>
