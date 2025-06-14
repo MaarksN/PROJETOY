@@ -12,6 +12,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const sections = [capaSection, menuSection, detalhesSection, playbookContentSection];
 
+    // Tone.js sounds
+    const synth = new Tone.Synth().toDestination();
+    const playHover = () => synth.triggerAttackRelease('E4', '8n');
+    const playOpen = () => synth.triggerAttackRelease('C5', '8n');
+    const playClose = () => synth.triggerAttackRelease('A3', '8n');
+    const playSuccess = () => synth.triggerAttackRelease('E5', '16n');
+
+    document.querySelectorAll('button, .menu-card').forEach(el => {
+        el.addEventListener('mouseenter', playHover);
+    });
+
+    const tarefaForm = document.getElementById('formTarefa');
+    if (tarefaForm) {
+        tarefaForm.addEventListener('submit', e => {
+            e.preventDefault();
+            playSuccess();
+            tarefaForm.reset();
+            showSection(menuSection);
+        });
+    }
+
     function showSection(sectionToShow) {
         sections.forEach(section => {
             if (section) section.classList.add('hidden');
@@ -19,6 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (sectionToShow) {
             sectionToShow.classList.remove('hidden');
             sectionToShow.scrollIntoView({ behavior: 'smooth' });
+            if (sectionToShow === playbookContentSection) {
+                document.body.classList.add('focus-mode');
+            } else {
+                document.body.classList.remove('focus-mode');
+            }
         }
     }
 
@@ -26,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnIniciar) {
         btnIniciar.addEventListener('click', (e) => {
             e.preventDefault();
+            playOpen();
             showSection(menuSection);
         });
     }
@@ -35,7 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const secaoId = card.getAttribute('data-secao');
             const secaoDetalhes = document.getElementById(secaoId);
             if (secaoDetalhes) {
+                playOpen();
+                const state = Flip.getState(card);
                 showSection(secaoDetalhes);
+                Flip.from(state, {duration: 0.6, ease: 'power1.inOut'});
             } else {
                 console.error(`Seção de detalhes com id '${secaoId}' não encontrada.`);
             }
@@ -45,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.index-item-card[data-page-url]').forEach(card => {
         card.addEventListener('click', () => {
             const url = card.getAttribute('data-page-url');
+            playOpen();
             loadPlaybookPage(url, card.closest('.manual-pitstop-detalhes-section').id);
         });
     });
@@ -52,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.btn-voltar-secao').forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
+            playClose();
             const targetSectionId = button.getAttribute('data-target-secao');
             const targetSection = document.getElementById(targetSectionId);
             if (targetSection) {
@@ -64,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function loadPlaybookPage(url, returnSectionId) {
         try {
+            playOpen();
             const response = await fetch(url);
             if (!response.ok) {
                 throw new Error(`Erro ao carregar a página: ${response.statusText}`);
@@ -81,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (backButton) {
                     backButton.addEventListener('click', (e) => {
                         e.preventDefault();
+                        playClose();
                         const targetSection = document.getElementById(returnSectionId);
                         showSection(targetSection);
                     });
@@ -142,6 +176,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (decreaseFontButton) {
         decreaseFontButton.addEventListener('click', () => changeFontSize('decrease'));
+    }
+
+    // Scroll progress bar
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) {
+        window.addEventListener('scroll', () => {
+            const max = document.body.scrollHeight - window.innerHeight;
+            const percent = (window.scrollY / max) * 100;
+            progressBar.style.setProperty('--progress', percent + '%');
+        });
     }
 
     const savedTheme = localStorage.getItem('theme');

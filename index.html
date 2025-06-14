@@ -9,8 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.min.js"></script>
 </head>
 <body>
+    <div id="progress-bar"></div>
 
     <section id="capa" class="capa-section">
         <div class="logos-container">
@@ -56,6 +60,10 @@
                 <div class="menu-card" data-secao="desafiosJogos">
                     <div class="menu-card-icon"><span class="emoji emoji-original-color">🏆</span></div>
                     <h3 class="menu-card-title">Desafios <span class="text-aa-green-darker">&</span> <br> <span class="text-arremaq-orange-darker">Jogos</span></h3>
+                </div>
+                <div class="menu-card" data-secao="tarefaForm">
+                    <div class="menu-card-icon"><span class="emoji emoji-original-color">✅</span></div>
+                    <h3 class="menu-card-title">Iniciar uma <span class="text-aa-green-darker">Tarefa</span></h3>
                 </div>
             </div>
         </div>
@@ -114,6 +122,28 @@
     <section id="playbookContentSection" class="playbook-sub-section hidden">
         <div id="playbookContentContainer" class="container mx-auto">
             </div>
+    </section>
+
+    <section id="explicacaoFinal" class="playbook-sub-section hidden">
+        <div class="container mx-auto">
+            <button class="btn-voltar-secao" data-target-secao="menuPrincipal"><i class="fas fa-arrow-left"></i> Voltar</button>
+            <h2 class="playbook-content-title"><span class="emoji">🎥</span> Como as animações cumprem o Manifesto</h2>
+            <p>Esta seção detalha como cada recurso de animação implementado com o GSAP cria uma experiência envolvente e responde ao manifesto de design do projeto.</p>
+        </div>
+    </section>
+
+    <section id="tarefaForm" class="playbook-sub-section hidden">
+        <div class="container mx-auto">
+            <button class="btn-voltar-secao" data-target-secao="menuPrincipal"><i class="fas fa-arrow-left"></i> Voltar</button>
+            <h2 class="playbook-content-title"><span class="emoji">✅</span> Nova Tarefa</h2>
+            <form id="formTarefa" class="mt-6">
+                <label for="tarefaNome">Nome da tarefa</label>
+                <input type="text" id="tarefaNome" required>
+                <label for="tarefaDesc">Descrição</label>
+                <input type="text" id="tarefaDesc" required>
+                <button type="submit" class="btn-iniciar">Enviar</button>
+            </form>
+        </div>
     </section>
 
     <div class="accessibility-controls">

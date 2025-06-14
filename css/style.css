@@ -674,4 +674,17 @@ body {
 .dashboard-item:hover { transform: translateX(10px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
 .dashboard-item.status-completed { border-left-color: #16a34a; }
 .dashboard-item.status-current { border-left-color: #f59e0b; animation: pulse-border 2s infinite; }
-@keyframes pulse-border { 0%,100% { box-shadow: 0 0 0 0 rgba(245,158,11,0.4); } 50% { box-shadow: 0 0 0 8px rgba(245,158,11,0); } }
+@keyframes pulse-border {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(245, 158, 11, 0); }
+}
+
+/* Modo foco para leitura imersiva */
+body.focus-mode {
+    filter: grayscale(60%);
+}
+body.focus-mode .menu-principal-section,
+body.focus-mode #themeToggleButton,
+body.focus-mode .accessibility-controls {
+    display: none;
+}
