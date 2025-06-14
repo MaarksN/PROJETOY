@@ -178,6 +178,33 @@ document.addEventListener('DOMContentLoaded', () => {
         decreaseFontButton.addEventListener('click', () => changeFontSize('decrease'));
     }
 
+    const readPageButton = document.getElementById('readPageBtn');
+    if (readPageButton) {
+        const synth = window.speechSynthesis;
+        if (!synth) {
+            readPageButton.style.display = 'none';
+        } else {
+            readPageButton.addEventListener('click', () => {
+                if (synth.speaking) {
+                    synth.cancel();
+                    return;
+                }
+                let activeSection = null;
+                sections.forEach(sec => {
+                    if (sec && !sec.classList.contains('hidden')) activeSection = sec;
+                });
+                if (!activeSection) return;
+                let text = '';
+                activeSection.querySelectorAll('h1, h2, h3, h4, p').forEach(el => {
+                    text += el.textContent + '. ';
+                });
+                const utterance = new SpeechSynthesisUtterance(text.trim());
+                utterance.lang = 'pt-BR';
+                synth.speak(utterance);
+            });
+        }
+    }
+
     // Scroll progress bar
     const progressBar = document.getElementById('progress-bar');
     if (progressBar) {
