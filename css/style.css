@@ -609,3 +609,69 @@ summary::-webkit-details-marker { display: none; }
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+/* ================================================ */
+/* CSS para Trilha de Aprendizado e Dashboard */
+/* ================================================ */
+:root {
+    --font-primary-portal: 'Manrope', sans-serif;
+    --font-headings-portal: 'Sora', sans-serif;
+    --trilha-bg-dark: #0a121c;
+    --card-bg-dark: #1e293b;
+    --card-border-dark: #334155;
+    --text-color-dark: #e2e8f0;
+    --text-muted-dark-portal: #94a3b8;
+    --accent-color: #16B097;
+    --accent-color-hover: #0F8A7E;
+}
+body {
+    background-color: var(--trilha-bg-dark);
+    color: var(--text-color-dark);
+    font-family: var(--font-primary-portal);
+    padding-top: 6px;
+}
+.font-primary-portal { font-family: var(--font-primary-portal); }
+.font-headings-portal { font-family: var(--font-headings-portal); }
+.text-muted-dark-portal { color: var(--text-muted-dark-portal); }
+.bg-accent-color { background-color: var(--accent-color); }
+.bg-accent-color-hover:hover { background-color: var(--accent-color-hover); }
+.text-accent-color { color: var(--accent-color); }
+.text-accent-color-hover:hover { color: var(--accent-color-hover); }
+@property --progress {
+    syntax: '<percentage>'; inherits: false; initial-value: 0%;
+}
+#progress-bar {
+    position: fixed; top: 0; left: 0; width: 100%; height: 6px;
+    background-color: var(--accent-color-hover);
+    transform-origin: left; transform: scaleX(var(--progress));
+    animation: progress-animation linear; animation-timeline: scroll(root);
+    z-index: 1000;
+}
+@keyframes progress-animation { from { transform: scaleX(0%); } to { transform: scaleX(100%); } }
+.trilha-card {
+    background-color: var(--card-bg-dark);
+    border: 1px solid var(--card-border-dark);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    opacity: 0; transform: translateY(30px); perspective: 1000px;
+}
+.trilha-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+    border-color: var(--accent-color);
+}
+.card-inner { transform-style: preserve-3d; transition: transform 0.6s; position: relative; width: 100%; height: 100%; }
+.trilha-card.completed .card-status { background-color: var(--accent-color); color: white; border-color: var(--accent-color); }
+.card-status { transition: all 0.4s ease; }
+.trilha-card.locked { pointer-events: none; filter: grayscale(80%) blur(1px); opacity: 0.6; }
+.trilha-card.locked .module-btn { background-color: #4a5568; cursor: not-allowed; }
+.quiz-option { transition: background-color 0.3s ease, transform 0.2s ease; }
+.quiz-option:hover { transform: scale(1.03); background-color: #334155; }
+.quiz-option.correct { background-color: #16a34a !important; color: white; }
+.quiz-option.incorrect { background-color: #dc2626 !important; color: white; }
+#conteudo-modulo-wrapper.foco-profundo { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--trilha-bg-dark); z-index: 2000; overflow-y: auto; padding-top: 4rem; }
+#btn-fechar-foco { position: fixed; top: 1rem; right: 1rem; z-index: 2001; }
+.dashboard-item { background-color: #1e293b; border-left: 4px solid #475569; transition: all 0.3s ease; }
+.dashboard-item:hover { transform: translateX(10px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+.dashboard-item.status-completed { border-left-color: #16a34a; }
+.dashboard-item.status-current { border-left-color: #f59e0b; animation: pulse-border 2s infinite; }
+@keyframes pulse-border { 0%,100% { box-shadow: 0 0 0 0 rgba(245,158,11,0.4); } 50% { box-shadow: 0 0 0 8px rgba(245,158,11,0); } }
