@@ -47,5 +47,41 @@
   <button id="decreaseFont" class="accessibility-btn">A-</button>
 </div>
 <script src="js/script.js"></script>
+  </section>
+
+  <section id="menuPrincipal" class="menu-principal-section hidden">
+    <h2 class="menu-principal-title">Menu Principal</h2>
+    <div class="menu-card" data-secao="manualPitstopDetalhes">
+      <span class="menu-card-icon">📘</span>
+      <p class="menu-card-title">Manual</p>
+    </div>
+  </section>
+
+  <section id="manualPitstopDetalhes" class="manual-pitstop-detalhes-section hidden">
+    <h2 class="manual-pitstop-main-title">Manual Pitstop</h2>
+    <div id="playbookIndexContainer" class="grid-cols-4">
+      <div class="index-item-card" data-page-url="partials/manual.html">
+        <span class="index-item-emoji">📄</span>
+        <h3 class="index-item-title"><strong>Manual</strong></h3>
+        <p class="index-item-sub"><span class="sentence-emoji">👉</span>Conteúdo</p>
+      </div>
+    </div>
+    <a href="#" class="btn-voltar-secao" data-target-secao="menuPrincipal">Voltar ao Menu</a>
+  </section>
+
+  <section id="playbookContentSection" class="playbook-sub-section hidden">
+    <div id="playbookContentContainer" class="container"></div>
+  </section>
+</div>
+
+<div class="theme-toggle-button" id="themeToggleButton">
+  <span id="sunIcon">☀️</span>
+  <span id="moonIcon" class="hidden">🌙</span>
+</div>
+<div class="accessibility-controls">
+  <button id="increaseFont" class="accessibility-btn">A+</button>
+  <button id="decreaseFont" class="accessibility-btn">A-</button>
+</div>
+<script src="js/script.js"></script>
 </body>
 </html>
